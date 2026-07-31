@@ -1,0 +1,79 @@
+{
+   "name": "taskbench",
+   "displayName": "Taskbench",
+   "description": "A workbench for project tasks. Create, run and manage them from the Explorer sidebar.",
+   "version": "0.1.0",
+   "publisher": "mahfujm",
+   "icon": "media/icon.png",
+   "license": "MIT",
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/stafawashere/taskbench-extension.git"
+   },
+   "engines": {
+      "vscode": "^1.75.0"
+   },
+   "categories": [
+      "Other"
+   ],
+   "keywords": [
+      "tasks",
+      "task runner",
+      "shell",
+      "commands",
+      "productivity"
+   ],
+   "main": "./src/extension.js",
+   "activationEvents": [],
+   "contributes": {
+      "views": {
+         "explorer": [
+            {
+               "type": "webview",
+               "id": "taskbench.view",
+               "name": "Taskbench",
+               "icon": "media/activity-icon.svg"
+            }
+         ]
+      },
+      "commands": [
+         {
+            "command": "taskbench.newTask",
+            "title": "New Task",
+            "category": "Taskbench",
+            "icon": "$(add)"
+         },
+         {
+            "command": "taskbench.refresh",
+            "title": "Refresh",
+            "category": "Taskbench",
+            "icon": "$(refresh)"
+         },
+         {
+            "command": "taskbench.openFile",
+            "title": "Open task.json",
+            "category": "Taskbench",
+            "icon": "$(go-to-file)"
+         }
+      ],
+      "menus": {
+         "view/title": [
+            {
+               "command": "taskbench.newTask",
+               "when": "view == taskbench.view",
+               "group": "navigation@1"
+            },
+            {
+               "command": "taskbench.refresh",
+               "when": "view == taskbench.view",
+               "group": "navigation@2"
+            },
+            {
+               "command": "taskbench.openFile",
+               "when": "view == taskbench.view",
+               "group": "navigation@3"
+            }
+         ]
+      }
+   }
+}

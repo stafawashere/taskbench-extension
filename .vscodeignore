@@ -1,0 +1,8 @@
+.vscode/**
+.vscode-test/**
+.gitignore
+.git/**
+.claude/**
+.tasks/**
+**/*.vsix
+media/icon.svg
